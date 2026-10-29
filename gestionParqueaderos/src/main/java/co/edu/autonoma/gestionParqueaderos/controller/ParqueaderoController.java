@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/parking")
 public class ParqueaderoController {
 
     // GET /api/parqueadero/estado

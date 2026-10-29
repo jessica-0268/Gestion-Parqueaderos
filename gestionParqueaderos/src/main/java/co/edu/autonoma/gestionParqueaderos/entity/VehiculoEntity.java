@@ -1,65 +1,34 @@
 package co.edu.autonoma.gestionParqueaderos.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "vehiculos")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class VehiculoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "placa", nullable = false, unique = true)
     private String placa;
 
-    @Column(nullable = false)
-    private String tipoVehiculo;
+    @Column(name = "tipo", nullable = false)
+    private String tipo;
 
-    @Column(nullable = false)
+    @Column(name = "hora_ingreso", nullable = false)
     private LocalDateTime horaIngreso;
 
-
-    public VehiculoEntity() {
-    }
-
-    public VehiculoEntity(String placa, String tipoVehiculo, LocalDateTime horaIngreso) {
+    public VehiculoEntity(String placa, String tipo) {
         this.placa = placa;
-        this.tipoVehiculo = tipoVehiculo;
-        this.horaIngreso = horaIngreso;
-    }
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    public String getTipoVehiculo() {
-        return tipoVehiculo;
-    }
-
-    public void setTipoVehiculo(String tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
-    }
-
-    public LocalDateTime getHoraIngreso() {
-        return horaIngreso;
-    }
-
-    public void setHoraIngreso(LocalDateTime horaIngreso) {
-        this.horaIngreso = horaIngreso;
+        this.tipo = tipo;
+        this.horaIngreso = LocalDateTime.now();
     }
 }
