@@ -1,4 +1,4 @@
-package co.edu.autonoma.gestionparqueaderos.dto;
+package co.edu.autonoma.gestionParqueaderos.dto;
 
 public record IngresoRequest(
         String placa,
