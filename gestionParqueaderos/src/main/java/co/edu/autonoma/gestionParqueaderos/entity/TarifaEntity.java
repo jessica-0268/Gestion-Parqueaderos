@@ -1,27 +1,28 @@
 package co.edu.autonoma.gestionParqueaderos.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tarifas")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class TarifaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false)
     private String tipoVehiculo;
 
     @Column(nullable = false)
     private Double valorPorHora;
 
-    public TarifaEntity() {}
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public String getTipoVehiculo() { return tipoVehiculo; }
-    public void setTipoVehiculo(String tipoVehiculo) { this.tipoVehiculo = tipoVehiculo; }
-    public Double getValorPorHora() { return valorPorHora; }
-    public void setValorPorHora(Double valorPorHora) { this.valorPorHora = valorPorHora; }
+    public TarifaEntity(String tipoVehiculo, Double valorPorHora) {
+        this.tipoVehiculo = tipoVehiculo;
+        this.valorPorHora = valorPorHora;
+    }
 }

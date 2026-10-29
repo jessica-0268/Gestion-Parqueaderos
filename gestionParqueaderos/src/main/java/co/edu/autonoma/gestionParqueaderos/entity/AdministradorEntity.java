@@ -1,32 +1,29 @@
 package co.edu.autonoma.gestionParqueaderos.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "administrador")
+@Table(name = "administradores")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AdministradorEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(nullable = false, length = 100)
-    private String nombre;
-
-    @Column(nullable = false, unique = true, length = 100)
-    private String correo;
+    @Column(nullable = false, unique = true)
+    private String usuario;
 
     @Column(nullable = false)
-    private String password;
+    private String contrasenna;
 
-    public AdministradorEntity() {}
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getCorreo() { return correo; }
-    public void setCorreo(String correo) { this.correo = correo; }
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    // Constructor corregido: los parámetros coinciden con los atributos
+    public AdministradorEntity(String usuario, String contrasenna) {
+        this.usuario = usuario;
+        this.contrasenna = contrasenna;
+    }
 }
