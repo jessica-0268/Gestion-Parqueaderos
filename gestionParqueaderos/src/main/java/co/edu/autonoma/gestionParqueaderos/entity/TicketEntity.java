@@ -29,7 +29,7 @@ public class TicketEntity {
     private Double totalPagar;
 
     @Column(nullable = false)
-    private String estado; // ACTIVO, PAGADO
+    private String estado;
 
     public TicketEntity(String placaVehiculo, String numeroPuesto) {
         this.placaVehiculo = placaVehiculo;
