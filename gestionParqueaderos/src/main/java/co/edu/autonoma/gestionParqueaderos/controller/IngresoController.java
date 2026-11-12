@@ -5,7 +5,7 @@ import co.edu.autonoma.gestionParqueaderos.dto.request.SalidaRequest;
 import co.edu.autonoma.gestionParqueaderos.dto.response.IngresoResponse;
 import co.edu.autonoma.gestionParqueaderos.service.IngresoService;
 import jakarta.validation.Valid;
-import org.springframework.http.Http                                                                                                                                                                                                                                                                                                                                                                                                                                                               Status;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
