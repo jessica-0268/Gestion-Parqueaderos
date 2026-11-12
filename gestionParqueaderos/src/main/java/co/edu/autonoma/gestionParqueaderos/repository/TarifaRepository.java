@@ -1,7 +1,0 @@
-package co.edu.autonoma.gestionParqueaderos.repository;
-
-import co.edu.autonoma.gestionParqueaderos.model.entity.TarifaEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface TarifaRepository extends JpaRepository<TarifaEntity, Integer> {
-}
