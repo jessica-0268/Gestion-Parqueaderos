@@ -1,7 +1,8 @@
 package co.edu.autonoma.gestionParqueaderos.controller;
 
-import co.edu.autonoma.gestionParqueaderos.dto.*;
-import co.edu.autonoma.gestionParqueaderos.entity.*;
+import co.edu.autonoma.gestionParqueaderos.model.entity.AdministradorEntity;
+import co.edu.autonoma.gestionParqueaderos.model.entity.TarifaEntity;
+import co.edu.autonoma.gestionParqueaderos.model.entity.VehiculoEntity;
 import co.edu.autonoma.gestionParqueaderos.service.ParqueaderoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

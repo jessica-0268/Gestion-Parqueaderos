@@ -1,4 +1,4 @@
-package co.edu.autonoma.gestionParqueaderos.entity;
+package co.edu.autonoma.gestionParqueaderos.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

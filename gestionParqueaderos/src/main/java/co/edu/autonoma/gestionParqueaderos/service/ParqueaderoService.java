@@ -1,10 +1,6 @@
 package co.edu.autonoma.gestionParqueaderos.service;
 
-import co.edu.autonoma.gestionParqueaderos.dto.IngresoRequest;
-import co.edu.autonoma.gestionParqueaderos.dto.IngresoResponse;
-import co.edu.autonoma.gestionParqueaderos.dto.SalidaRequest;
-import co.edu.autonoma.gestionParqueaderos.dto.SalidaResponse;
-import co.edu.autonoma.gestionParqueaderos.entity.TicketEntity;
+import co.edu.autonoma.gestionParqueaderos.model.entity.TicketEntity;
 import co.edu.autonoma.gestionParqueaderos.repository.TicketRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -42,11 +38,11 @@ public class ParqueaderoService {
         log.info("Procesando salida para el ticket ID: {}", request.ticketId());
 
         return new SalidaResponse(
-                request.ticketId(),   // 1. idTicket
-                "ABC123",            // 2. placa (fija por ahora)
-                LocalDateTime.now(),  // 3. fechaIngreso
-                LocalDateTime.now(),  // 4. fechaSalida
-                5000.0                // 5. totalPagar
+                request.ticketId(),
+                "ABC123",
+                LocalDateTime.now(),
+                LocalDateTime.now(),
+                5000.0
         );
     }
     }
