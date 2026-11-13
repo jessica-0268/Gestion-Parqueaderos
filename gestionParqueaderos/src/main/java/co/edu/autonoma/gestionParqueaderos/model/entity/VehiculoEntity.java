@@ -1,10 +1,10 @@
 package co.edu.autonoma.gestionParqueaderos.model.entity;
 
+import co.edu.autonoma.gestionParqueaderos.model.enums.TipoVehiculo;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "vehiculos")
@@ -14,21 +14,22 @@ public class VehiculoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "placa", nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 10)
     private String placa;
 
-    @Column(name = "tipo", nullable = false)
-    private String tipo;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private TipoVehiculo tipo;
 
-    @Column(name = "hora_ingreso", nullable = false)
-    private LocalDateTime horaIngreso;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "conductor_id")
+    private UsuarioEntity conductor;
 
-    public VehiculoEntity(String placa, String tipo) {
-        this.placa = placa;
+    public VehiculoEntity(String placa, TipoVehiculo tipo, UsuarioEntity conductor) {
+        this.placa = placa.trim().toUpperCase();
         this.tipo = tipo;
-        this.horaIngreso = LocalDateTime.now();
+        this.conductor = conductor;
     }
 }
