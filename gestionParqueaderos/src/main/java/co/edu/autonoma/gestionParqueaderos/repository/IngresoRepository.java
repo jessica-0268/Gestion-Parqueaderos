@@ -1,5 +1,6 @@
 package co.edu.autonoma.gestionParqueaderos.repository;
 
+import co.edu.autonoma.gestionParqueaderos.model.entity.IngresoEntity;
 import co.edu.autonoma.gestionParqueaderos.model.enums.EstadoIngreso;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -20,4 +21,3 @@ public interface IngresoRepository extends JpaRepository<IngresoEntity, Long> {
     boolean existsByPermiso_IdAndEstado(Long permisoId, EstadoIngreso estado);
 
 }
-

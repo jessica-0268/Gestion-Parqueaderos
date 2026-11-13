@@ -1,5 +1,6 @@
 package co.edu.autonoma.gestionParqueaderos.repository;
 
+import co.edu.autonoma.gestionParqueaderos.model.entity.PermisoEntity;
 import co.edu.autonoma.gestionParqueaderos.model.enums.EstadoPermiso;
 import org.springframework.data.jpa.repository.JpaRepository;
 

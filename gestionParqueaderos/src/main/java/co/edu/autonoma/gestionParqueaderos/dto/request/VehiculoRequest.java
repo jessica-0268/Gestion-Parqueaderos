@@ -1,24 +1,24 @@
-package co.edu.autonoma.gestionParqueaderos.repository;
+package co.edu.autonoma.gestionParqueaderos.dto.request;
 
-import co.edu.autonoma.gestionParqueaderos.model.enums.EstadoIngreso;
-import org.springframework.data.jpa.repository.JpaRepository;
+import co.edu.autonoma.gestionParqueaderos.model.enums.TipoVehiculo;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 
-import java.util.Optional;
+public record VehiculoRequest(
 
-public interface IngresoRepository extends JpaRepository<IngresoEntity, Long> {
+        @NotBlank(message = "La placa es obligatoria")
+        @Pattern(
+                regexp = "^[A-Za-z]{3}[0-9]{2}[0-9A-Za-z]$",
+                message = "Formato de placa inválido (ej. ABC123 o ABC12D)"
+        )
+        String placa,
 
-    /** RN-03: Verifica si un vehículo tiene un ingreso activo. */
-    boolean existsByPermiso_Vehiculo_PlacaAndEstado(String placa, EstadoIngreso estado);
+        @NotNull(message = "El tipo de vehículo es obligatorio")
+        TipoVehiculo tipo,
 
-    /** RN-04, RN-06: Cuenta los vehículos que permanecen dentro de una zona. */
-    long countByPermiso_Zona_IdAndEstado(Long zonaId, EstadoIngreso estado);
+        @Positive(message = "conductorId debe ser un número positivo")
+        Long conductorId
 
-    /** RN-05: Busca un ingreso por su identificador y estado. */
-    Optional<IngresoEntity> findByIdAndEstado(Long id, EstadoIngreso estado);
-
-    /** Verifica si un permiso tiene un ingreso activo. */
-    boolean existsByPermiso_IdAndEstado(Long permisoId, EstadoIngreso estado);
-
-}
-
-
+) {}
