@@ -1,6 +1,5 @@
 package co.edu.autonoma.gestionParqueaderos.service;
 
-import co.edu.autonoma.gestionParqueaderos.model.entity.TicketEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

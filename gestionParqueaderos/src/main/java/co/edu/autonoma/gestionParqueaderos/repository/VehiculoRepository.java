@@ -1,6 +1,5 @@
 package co.edu.autonoma.gestionParqueaderos.repository;
 
-import co.edu.autonoma.gestionParqueaderos.model.entity.VehiculoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

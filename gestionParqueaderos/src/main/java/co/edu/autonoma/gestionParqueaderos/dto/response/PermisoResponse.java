@@ -1,6 +1,5 @@
 package co.edu.autonoma.gestionParqueaderos.dto.response;
 
-import co.edu.autonoma.gestionParqueaderos.model.entity.PermisoEntity;
 import co.edu.autonoma.gestionParqueaderos.model.enums.EstadoPermiso;
 
 import java.time.LocalDate;
