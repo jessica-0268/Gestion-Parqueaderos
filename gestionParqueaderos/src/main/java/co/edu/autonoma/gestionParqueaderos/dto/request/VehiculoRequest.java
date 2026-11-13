@@ -22,4 +22,3 @@ public record VehiculoRequest(
         Long conductorId
 
 ) {}
-

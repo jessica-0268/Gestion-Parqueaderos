@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface VehiculoRepository extends JpaRepository<VehiculoEntity, Integer> {
+public interface VehiculoRepository extends JpaRepository<VehiculoEntity, Long> {
 
+    /** Consulta un vehículo por su placa. */
     Optional<VehiculoEntity> findByPlaca(String placa);
 
-    Integer countByTipoVehiculo(String tipoVehiculo);
 }
